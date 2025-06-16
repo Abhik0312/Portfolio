@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About Me | Abhik Sarkar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 🔁 Background Video -->
+  <video autoplay muted loop playsinline class="bg-video" id="bgVideo">
+    <source src="{{ url_for('static', filename='videos/intro.mp4') }}" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <!-- Overlay for blur -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Main content hidden initially -->
+  <div class="container hidden" id="mainContent">
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}" class="logo">Abhik</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a class="active" href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="about-section">
+      <div class="text">
+        <h1 id="typed-heading"></h1>
+        <p id="typed-p1"></p>
+        <p id="typed-p2"></p>
+        <a href="mailto:sarkarabhik86@gmail.com" class="btn">Let's Connect</a>
+      </div>
+      <div class="image glass">
+        <img src="{{ url_for('static', filename='images/me.png') }}" alt="Abhik Sarkar" />
+      </div>
+    </div>
+  </div>
+
+  <!-- JS Section -->
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        document.getElementById("mainContent").classList.remove("hidden");
+        document.getElementById("mainContent").classList.add("fade-in");
+        document.getElementById("overlay").classList.add("blurred");
+      }, 3000);
+    });
+
+    const headingText = "About Me";
+    const para1 = "I'm Abhik Sarkar, a full stack developer with a deep passion for blending creativity with functionality.";
+    const para2 = "My toolkit includes HTML, CSS, JS, Python, Django, React, SQL, and more. I enjoy solving real-world problems with clean, user-friendly code.";
+
+    function typeText(id, text, delay = 50, callback) {
+      const el = document.getElementById(id);
+      let i = 0;
+      function type() {
+        if (i < text.length) {
+          el.innerHTML += text.charAt(i);
+          i++;
+          setTimeout(type, delay);
+        } else if (callback) {
+          callback();
+        }
+      }
+      type();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      setTimeout(() => {
+        typeText("typed-heading", headingText, 80, () => {
+          typeText("typed-p1", para1, 20, () => {
+            typeText("typed-p2", para2, 20);
+          });
+        });
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>

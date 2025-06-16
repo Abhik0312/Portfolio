@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abhik Sarkar | Portfolio</title>
+
+  <!-- ✅ Correct path using Flask's url_for -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- 🎥 3D VIDEO BACKGROUND -->
+  <video autoplay muted loop class="video-bg">
+    <source src="{{ url_for('static', filename='videos/tech.mp4') }}" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <!-- 🕶️ DARK OVERLAY -->
+  <div class="overlay"></div>
+
+  <!-- 💬 MAIN CONTENT -->
+  <div class="content">
+    <h1>Hi, I'm Abhik Sarkar</h1>
+    <p>Full Stack Developer | Dreamer | Innovator</p>
+    <button class="btn" onclick="location.href='{{ url_for('about') }}'">Explore Portfolio</button>
+  </div>
+
+</body>
+</html>

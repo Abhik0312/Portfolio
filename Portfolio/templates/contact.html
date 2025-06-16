@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact | Abhik Sarkar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="{{ url_for('static', filename='videos/intro.mp4') }}" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="overlay"></div>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}" class="logo">Abhik</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a href="{{ url_for('projects') }}">Projects</a></li>
+        <li><a class="active" href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="contact-section">
+      <h1>Contact Me</h1>
+      <p>Feel free to reach out via the form or scan the QR code below to directly download my latest resume.</p>
+
+      <div class="contact-box">
+        <div class="left">
+          <h2>Download My CV:</h2>
+          <p>Scan this QR to download my resume instantly</p>
+          <img src="{{ url_for('static', filename='images/My_PDF.png') }}" alt="QR to download resume" class="qr-code" />
+        </div>
+
+        <div class="right">
+          <form action="https://formspree.io/f/xblyobnd" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required />
+            <input type="email" name="email" placeholder="Your Email" required />
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

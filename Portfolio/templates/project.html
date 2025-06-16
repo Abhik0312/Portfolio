@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Abhik Sarkar</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- Background Video -->
+  <video autoplay muted loop playsinline class="bg-video">
+    <source src="{{ url_for('static', filename='videos/tech.mp4') }}" type="video/mp4" />
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="overlay"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}" class="logo">Abhik</a>
+      <ul class="nav-links">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('about') }}">About</a></li>
+        <li><a class="active" href="{{ url_for('projects') }}">Projects</a></li>
+        <li><a href="{{ url_for('contact') }}">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="projects-section">
+      <h1 class="title">My Projects</h1>
+      <div class="projects-grid">
+
+        <!-- Project 1 -->
+        <div class="project-card">
+          <h2>Vegetable Price Predictor</h2>
+          <p>Machine Learning-based web app that predicts vegetable prices using ARIMA and SARIMA models. Built to assist farmers and retailers with accurate short-term forecasting.</p>
+          <span class="tech">Tech Used: Python, Flask, ARIMA, HTML/CSS</span>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card">
+          <h2>Responsive Educational Portal</h2>
+          <p>Designed and developed a responsive educational platform using HTML, CSS, and JavaScript. Features smooth navigation, accessibility, and cross-device optimization.</p>
+          <span class="tech">Tech Used: HTML, CSS, JavaScript</span><br>
+          <a href="https://abhik0312.github.io/insta/" target="_blank" class="btn">Visit Site</a>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card">
+          <h2>University Website Clone</h2>
+          <p>Cloned the official university website with a responsive and modern design using only frontend technologies. Focused on interface replication and compatibility.</p>
+          <span class="tech">Tech Used: HTML, CSS, JavaScript</span>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card">
+          <h2>Soil Classification Using MobileNetV2</h2>
+          <p>An AI-driven web app that uses real-time images from a camera to classify soil type using a MobileNetV2 deep learning model. It provides key soil attributes (e.g., pH, fertility level) and suggests optimal crops for cultivation.</p>
+          <span class="tech">Tech Used: TensorFlow, MobileNetV2, Flask, OpenCV, HTML/CSS</span>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card">
+          <h2>Music Mantra Institute Website</h2>
+          <p>A fully responsive, real-world educational and promotional website for Music Mantra Institute, showcasing programs, mentors, social initiatives, gallery, and online/offline music training. Includes studio tour, multimedia showreels, and integrated contact support.</p>
+          <span class="tech">Tech Used: HTML, CSS, JavaScript, Responsive Design</span>
+          <a href="https://musicmantrainstitute.com/" target="_blank" class="btn">Visit Site</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
